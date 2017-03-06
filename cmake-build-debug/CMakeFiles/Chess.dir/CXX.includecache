@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/firgaty/Prog/Projects/Chess/MainWindow.cpp
+MainWindow.hpp
+/home/firgaty/Prog/Projects/Chess/MainWindow.hpp
+
+/home/firgaty/Prog/Projects/Chess/MainWindow.hpp
+
+/home/firgaty/Prog/Projects/Chess/main.cpp
+iostream
+-
+SFML/Graphics.hpp
+-
+
