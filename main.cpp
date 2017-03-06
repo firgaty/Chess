@@ -2,58 +2,22 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include "Board.hpp"
 
 sf::Sprite plateau() {
-    // create a 500x500 render-texture
-    sf::RenderTexture renderTexture;
-    if (!renderTexture.create(500, 500))
-    {
-        // error...
-    }
 
-    sf::Texture tex_dark_wood;
-    sf::Texture tex_light_wood;
-
-    sf::Image img_dark_wood;
-    sf::Image img_light_wood;
-
-    if (!img_dark_wood.loadFromFile("images/textures/dark-wood.jpg")) {}
-    if (!img_light_wood.loadFromFile("images/textures/light-wood.jpg")) {}
-
-
-    // load a 32x32 rectangle that starts at (10, 10)
-    if (!tex_dark_wood.loadFromImage(img_dark_wood, sf::IntRect(10, 10, 96, 96))){}
-    if (!tex_light_wood.loadFromImage(img_light_wood, sf::IntRect(10, 10, 96, 96))){}
-
-    // drawing uses the same functions
-
-
-    for(int i = 0; i < 8; i++) {
-        for(int j = 0; j < 8; j++) {
-            sf::Sprite sprite;
-            if((i+j) % 2 == 0) {
-                sprite.setTexture(tex_light_wood);
-            } else {
-                sprite.setTexture(tex_dark_wood);
-            }
-            sprite.setPosition(sf::Vector2f(((float) i) * 96 + 1, ((float) j) * 96 + 1));
-            renderTexture.draw(sprite);
-        }
-    }
-    renderTexture.display();
-
-
-    const sf::Texture& texture2 = renderTexture.getTexture();
-
-    sf::Sprite sprite(texture2);
 
 }
 
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800,600), "Chess");
+    sf::RenderWindow window(sf::VideoMode(800,800), "Chess");
 
+    Board board;
+
+    if(!board.load("images/textures/boardTiles.png", sf::Vector2u(96, 96), 8, 8))
+        return -1;
 
     while (window.isOpen()) {
         sf::Event event;
@@ -70,11 +34,64 @@ int main()
         }
 
         window.clear(sf::Color::Black);
+        window.draw(board);
+        window.display();
 
 
-        window.draw(plateau());
+/*
+        // create a 500x500 render-texture
+        sf::RenderTexture renderTexture;
+        if (!renderTexture.create(800, 800))
+        {
+            // error...
+        }
+
+        sf::Texture tex_dark_wood;
+        sf::Texture tex_light_wood;
+
+        sf::Image img_dark_wood;
+        sf::Image img_light_wood;
+
+        if (!img_dark_wood.loadFromFile("images/textures/dark-wood.jpg")) {}
+        if (!img_light_wood.loadFromFile("images/textures/light-wood.jpg")) {}
+
+
+        // load a 32x32 rectangle that starts at (10, 10)
+        if (!tex_dark_wood.loadFromImage(img_dark_wood, sf::IntRect(10, 10, 96, 96))){}
+        if (!tex_light_wood.loadFromImage(img_light_wood, sf::IntRect(10, 10, 96, 96))){}
+
+        // drawing uses the same functions
+
+
+        for(int i = 0; i < 8; i++) {
+            for(int j = 0; j < 8; j++) {
+                sf::Sprite sprite;
+                if((i+j) % 2 == 0) {
+                    sprite.setTexture(tex_light_wood);
+                } else {
+                    sprite.setTexture(tex_dark_wood);
+                }
+                sprite.setPosition(sf::Vector2f(((float) i) * 96, ((float) j) * 96));
+                if(!((i+j) % 2 == 0)) sprite.setRotation(90);
+
+                renderTexture.draw(sprite);
+            }
+        }
+        renderTexture.display();
+
+
+        const sf::Texture& texture2 = renderTexture.getTexture();
+
+        sf::Sprite sprite2(texture2);
+
+        window.draw(sprite2);
+
+
+
 
         window.display();
+
+        */
     }
     return 0;
 }
