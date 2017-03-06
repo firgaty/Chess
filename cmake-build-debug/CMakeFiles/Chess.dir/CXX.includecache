@@ -6,15 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/firgaty/Prog/Projects/Chess/MainWindow.cpp
-MainWindow.hpp
-/home/firgaty/Prog/Projects/Chess/MainWindow.hpp
-
-/home/firgaty/Prog/Projects/Chess/MainWindow.hpp
-
-/home/firgaty/Prog/Projects/Chess/main.cpp
+/home/firgaty/Prog/Cpp/Chess/main.cpp
 iostream
 -
 SFML/Graphics.hpp
+-
+SFML/Window.hpp
 -
 

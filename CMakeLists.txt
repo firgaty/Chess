@@ -20,7 +20,7 @@ include_directories("${PROJECT_BINARY_DIR}")
 
 # Define sources and executable
 set(EXECUTABLE_NAME "Chess")
-add_executable(${EXECUTABLE_NAME} main.cpp MainWindow.cpp MainWindow.hpp)
+add_executable(${EXECUTABLE_NAME} main.cpp)
 
 # Detect and add SFML
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})

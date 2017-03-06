@@ -48,10 +48,10 @@ RM = /opt/clion/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/firgaty/Prog/Projects/Chess
+CMAKE_SOURCE_DIR = /home/firgaty/Prog/Cpp/Chess
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/firgaty/Prog/Projects/Chess/cmake-build-debug
+CMAKE_BINARY_DIR = /home/firgaty/Prog/Cpp/Chess/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles /home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/firgaty/Prog/Cpp/Chess/cmake-build-debug/CMakeFiles /home/firgaty/Prog/Cpp/Chess/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/firgaty/Prog/Cpp/Chess/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,33 +123,6 @@ Chess/fast:
 	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/build
 .PHONY : Chess/fast
 
-MainWindow.o: MainWindow.cpp.o
-
-.PHONY : MainWindow.o
-
-# target to build an object file
-MainWindow.cpp.o:
-	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/MainWindow.cpp.o
-.PHONY : MainWindow.cpp.o
-
-MainWindow.i: MainWindow.cpp.i
-
-.PHONY : MainWindow.i
-
-# target to preprocess a source file
-MainWindow.cpp.i:
-	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/MainWindow.cpp.i
-.PHONY : MainWindow.cpp.i
-
-MainWindow.s: MainWindow.cpp.s
-
-.PHONY : MainWindow.s
-
-# target to generate assembly for a file
-MainWindow.cpp.s:
-	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/MainWindow.cpp.s
-.PHONY : MainWindow.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -186,9 +159,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Chess"
-	@echo "... MainWindow.o"
-	@echo "... MainWindow.i"
-	@echo "... MainWindow.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
