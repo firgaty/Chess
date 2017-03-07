@@ -9,11 +9,11 @@
 Rotation of the board when 2nd player's move.
 Another logo for the title bar
 Numbers and letters on the side of the board.
-2) Interactivity
+- Interactivity
     - Make the pieces selectable and movable.
     - Add Events to make the command buttons useful.
 
-3) Mechanics
+- Mechanics
     - Implement the different pieces movement range and abilities.
         + Pawns black or white
         + Rooks
@@ -31,7 +31,7 @@ Numbers and letters on the side of the board.
     - Implement End game:
         + Check all kings possible movements and se if checkmate.
 
-4) Other
+- Other
     - Implement a save/load system.
     - Implement the display of the different moves on a txt screen.
     - 2 Players game.
