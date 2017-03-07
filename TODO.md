@@ -1,6 +1,6 @@
 # TODO :
 
-1) Display
+- Display
 Add the reset button.
 Add other command buttons.
      Undo
