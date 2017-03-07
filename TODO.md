@@ -1,11 +1,11 @@
 # TODO :
 
 - Display
-Add the reset button.
-Add other command buttons.
-     Undo
-     Save
-     Load
+     - Add the reset button.
+     - Add other command buttons.
+          - Undo
+          - Save
+          - Load
 Rotation of the board when 2nd player's move.
 Another logo for the title bar
 Numbers and letters on the side of the board.
