@@ -150,6 +150,33 @@ Board.cpp.s:
 	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/Board.cpp.s
 .PHONY : Board.cpp.s
 
+PiecesOnBoard.o: PiecesOnBoard.cpp.o
+
+.PHONY : PiecesOnBoard.o
+
+# target to build an object file
+PiecesOnBoard.cpp.o:
+	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/PiecesOnBoard.cpp.o
+.PHONY : PiecesOnBoard.cpp.o
+
+PiecesOnBoard.i: PiecesOnBoard.cpp.i
+
+.PHONY : PiecesOnBoard.i
+
+# target to preprocess a source file
+PiecesOnBoard.cpp.i:
+	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/PiecesOnBoard.cpp.i
+.PHONY : PiecesOnBoard.cpp.i
+
+PiecesOnBoard.s: PiecesOnBoard.cpp.s
+
+.PHONY : PiecesOnBoard.s
+
+# target to generate assembly for a file
+PiecesOnBoard.cpp.s:
+	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/PiecesOnBoard.cpp.s
+.PHONY : PiecesOnBoard.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... Board.o"
 	@echo "... Board.i"
 	@echo "... Board.s"
+	@echo "... PiecesOnBoard.o"
+	@echo "... PiecesOnBoard.i"
+	@echo "... PiecesOnBoard.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

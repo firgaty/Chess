@@ -16,6 +16,16 @@ SFML/Graphics.hpp
 iostream
 -
 
+/home/firgaty/Prog/Projects/Chess/PiecesOnBoard.cpp
+PiecesOnBoard.hpp
+/home/firgaty/Prog/Projects/Chess/PiecesOnBoard.hpp
+
+/home/firgaty/Prog/Projects/Chess/PiecesOnBoard.hpp
+iostream
+-
+SFML/Graphics.hpp
+-
+
 /home/firgaty/Prog/Projects/Chess/main.cpp
 iostream
 -
@@ -25,4 +35,6 @@ SFML/Window.hpp
 -
 Board.hpp
 /home/firgaty/Prog/Projects/Chess/Board.hpp
+PiecesOnBoard.hpp
+/home/firgaty/Prog/Projects/Chess/PiecesOnBoard.hpp
 

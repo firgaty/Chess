@@ -90,6 +90,12 @@
 		<Unit filename="/home/firgaty/Prog/Projects/Chess/Board.hpp">
 			<Option target="Chess"/>
 		</Unit>
+		<Unit filename="/home/firgaty/Prog/Projects/Chess/PiecesOnBoard.cpp">
+			<Option target="Chess"/>
+		</Unit>
+		<Unit filename="/home/firgaty/Prog/Projects/Chess/PiecesOnBoard.hpp">
+			<Option target="Chess"/>
+		</Unit>
 		<Unit filename="/home/firgaty/Prog/Projects/Chess/main.cpp">
 			<Option target="Chess"/>
 		</Unit>
