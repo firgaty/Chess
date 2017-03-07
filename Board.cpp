@@ -38,7 +38,7 @@ bool Board::load(const std::string& texture, sf::Vector2u tileSize, unsigned int
     return true;
 }
 
-virtual void Board::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void Board::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     // apply the transform
     states.transform *= getTransform();

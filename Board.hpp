@@ -12,7 +12,7 @@
 class Board : public sf::Drawable, public sf::Transformable {
 
 public:
-    bool load(const std::string& texture, sf::Vector2u tileSize, unsigned int width, unsigned int height);
+    bool load(const std::string& texture, sf::Vector2u tileSize, unsigned int width = 8, unsigned int height = 8);
 
 
 private:

@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include "Board.hpp"
+#include "PiecesOnBoard.hpp"
 
 sf::Sprite plateau() {
 
@@ -17,6 +18,23 @@ int main()
     Board board;
 
     if(!board.load("images/textures/boardTiles.png", sf::Vector2u(96, 96), 8, 8))
+        return -1;
+
+    PiecesOnBoard pOBoard;
+
+    int pieces[] =
+            {
+                    10,  9,  8,  7,  6,  8,  9, 10,
+                    11, 11, 11, 11, 11, 11, 11, 11,
+                    -1, -1, -1, -1, -1, -1, -1, -1,
+                    -1, -1, -1, -1, -1, -1, -1, -1,
+                    -1, -1, -1, -1, -1, -1, -1, -1,
+                    -1, -1, -1, -1, -1, -1, -1, -1,
+                     5,  5,  5,  5,  5,  5,  5,  5,
+                     4,  3,  2,  1,  0,  2,  3,  4,
+            };
+
+    if(!pOBoard.load("images/textures/pieces.png", sf::Vector2u(96, 96), pieces,8, 8))
         return -1;
 
     while (window.isOpen()) {
@@ -35,6 +53,7 @@ int main()
 
         window.clear(sf::Color::Black);
         window.draw(board);
+        window.draw(pOBoard);
         window.display();
 
 
