@@ -4,10 +4,14 @@
 CMakeFiles/Chess.dir/Board.cpp.o: ../Board.cpp
 CMakeFiles/Chess.dir/Board.cpp.o: ../Board.hpp
 
+CMakeFiles/Chess.dir/DrawBoard.cpp.o: ../DrawBoard.cpp
+CMakeFiles/Chess.dir/DrawBoard.cpp.o: ../DrawBoard.hpp
+
 CMakeFiles/Chess.dir/PiecesOnBoard.cpp.o: ../PiecesOnBoard.cpp
 CMakeFiles/Chess.dir/PiecesOnBoard.cpp.o: ../PiecesOnBoard.hpp
 
 CMakeFiles/Chess.dir/main.cpp.o: ../Board.hpp
+CMakeFiles/Chess.dir/main.cpp.o: ../DrawBoard.hpp
 CMakeFiles/Chess.dir/main.cpp.o: ../PiecesOnBoard.hpp
 CMakeFiles/Chess.dir/main.cpp.o: ../main.cpp
 

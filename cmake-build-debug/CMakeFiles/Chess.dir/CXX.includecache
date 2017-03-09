@@ -6,35 +6,47 @@
 
 #IncludeRegexTransform: 
 
-/home/firgaty/Prog/Projects/Chess/Board.cpp
+/home/firgaty/Prog/Cpp/Chess/Board.cpp
 Board.hpp
-/home/firgaty/Prog/Projects/Chess/Board.hpp
+/home/firgaty/Prog/Cpp/Chess/Board.hpp
 
-/home/firgaty/Prog/Projects/Chess/Board.hpp
+/home/firgaty/Prog/Cpp/Chess/Board.hpp
 SFML/Graphics.hpp
 -
 iostream
 -
 
-/home/firgaty/Prog/Projects/Chess/PiecesOnBoard.cpp
+/home/firgaty/Prog/Cpp/Chess/DrawBoard.cpp
+DrawBoard.hpp
+/home/firgaty/Prog/Cpp/Chess/DrawBoard.hpp
+
+/home/firgaty/Prog/Cpp/Chess/DrawBoard.hpp
+SFML/Graphics.hpp
+-
+iostream
+-
+
+/home/firgaty/Prog/Cpp/Chess/PiecesOnBoard.cpp
 PiecesOnBoard.hpp
-/home/firgaty/Prog/Projects/Chess/PiecesOnBoard.hpp
+/home/firgaty/Prog/Cpp/Chess/PiecesOnBoard.hpp
 
-/home/firgaty/Prog/Projects/Chess/PiecesOnBoard.hpp
+/home/firgaty/Prog/Cpp/Chess/PiecesOnBoard.hpp
 iostream
 -
 SFML/Graphics.hpp
 -
 
-/home/firgaty/Prog/Projects/Chess/main.cpp
+/home/firgaty/Prog/Cpp/Chess/main.cpp
 iostream
 -
 SFML/Graphics.hpp
 -
 SFML/Window.hpp
 -
-Board.hpp
-/home/firgaty/Prog/Projects/Chess/Board.hpp
 PiecesOnBoard.hpp
-/home/firgaty/Prog/Projects/Chess/PiecesOnBoard.hpp
+/home/firgaty/Prog/Cpp/Chess/PiecesOnBoard.hpp
+DrawBoard.hpp
+/home/firgaty/Prog/Cpp/Chess/DrawBoard.hpp
+Board.hpp
+/home/firgaty/Prog/Cpp/Chess/Board.hpp
 

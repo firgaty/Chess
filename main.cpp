@@ -2,8 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
-#include "Board.hpp"
 #include "PiecesOnBoard.hpp"
+#include "DrawBoard.hpp"
+#include "Board.hpp"
 
 sf::Sprite plateau() {
 
@@ -15,7 +16,7 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode(800,800), "Chess");
 
-    Board board;
+    DrawBoard board;
 
     if(!board.load("images/textures/boardTiles.png", sf::Vector2u(96, 96), 8, 8))
         return -1;
@@ -33,6 +34,8 @@ int main()
                      5,  5,  5,  5,  5,  5,  5,  5,
                      4,  3,  2,  1,  0,  2,  3,  4,
             };
+
+    Board *pBoard = new Board();
 
     if(!pOBoard.load("images/textures/pieces.png", sf::Vector2u(96, 96), pieces,8, 8))
         return -1;

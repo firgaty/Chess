@@ -48,10 +48,10 @@ RM = /opt/clion/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/firgaty/Prog/Projects/Chess
+CMAKE_SOURCE_DIR = /home/firgaty/Prog/Cpp/Chess
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/firgaty/Prog/Projects/Chess/cmake-build-debug
+CMAKE_BINARY_DIR = /home/firgaty/Prog/Cpp/Chess/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles /home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/firgaty/Prog/Cpp/Chess/cmake-build-debug/CMakeFiles /home/firgaty/Prog/Cpp/Chess/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/firgaty/Prog/Cpp/Chess/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,33 @@ Board.cpp.s:
 	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/Board.cpp.s
 .PHONY : Board.cpp.s
 
+DrawBoard.o: DrawBoard.cpp.o
+
+.PHONY : DrawBoard.o
+
+# target to build an object file
+DrawBoard.cpp.o:
+	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/DrawBoard.cpp.o
+.PHONY : DrawBoard.cpp.o
+
+DrawBoard.i: DrawBoard.cpp.i
+
+.PHONY : DrawBoard.i
+
+# target to preprocess a source file
+DrawBoard.cpp.i:
+	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/DrawBoard.cpp.i
+.PHONY : DrawBoard.cpp.i
+
+DrawBoard.s: DrawBoard.cpp.s
+
+.PHONY : DrawBoard.s
+
+# target to generate assembly for a file
+DrawBoard.cpp.s:
+	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/DrawBoard.cpp.s
+.PHONY : DrawBoard.cpp.s
+
 PiecesOnBoard.o: PiecesOnBoard.cpp.o
 
 .PHONY : PiecesOnBoard.o
@@ -216,6 +243,9 @@ help:
 	@echo "... Board.o"
 	@echo "... Board.i"
 	@echo "... Board.s"
+	@echo "... DrawBoard.o"
+	@echo "... DrawBoard.i"
+	@echo "... DrawBoard.s"
 	@echo "... PiecesOnBoard.o"
 	@echo "... PiecesOnBoard.i"
 	@echo "... PiecesOnBoard.s"
