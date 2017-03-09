@@ -43,10 +43,10 @@ RM = /opt/clion/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/firgaty/Prog/Cpp/Chess
+CMAKE_SOURCE_DIR = /home/firgaty/Prog/Projects/Chess
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/firgaty/Prog/Cpp/Chess/cmake-build-debug
+CMAKE_BINARY_DIR = /home/firgaty/Prog/Projects/Chess/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Chess.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/Chess.dir/flags.make
 
 CMakeFiles/Chess.dir/main.cpp.o: CMakeFiles/Chess.dir/flags.make
 CMakeFiles/Chess.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Cpp/Chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Chess.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Chess.dir/main.cpp.o -c /home/firgaty/Prog/Cpp/Chess/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Chess.dir/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Chess.dir/main.cpp.o -c /home/firgaty/Prog/Projects/Chess/main.cpp
 
 CMakeFiles/Chess.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Chess.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Cpp/Chess/main.cpp > CMakeFiles/Chess.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Projects/Chess/main.cpp > CMakeFiles/Chess.dir/main.cpp.i
 
 CMakeFiles/Chess.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Chess.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Cpp/Chess/main.cpp -o CMakeFiles/Chess.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Projects/Chess/main.cpp -o CMakeFiles/Chess.dir/main.cpp.s
 
 CMakeFiles/Chess.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/Chess.dir/main.cpp.o.provides.build: CMakeFiles/Chess.dir/main.cpp.o
 
 CMakeFiles/Chess.dir/Board.cpp.o: CMakeFiles/Chess.dir/flags.make
 CMakeFiles/Chess.dir/Board.cpp.o: ../Board.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Cpp/Chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Chess.dir/Board.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Chess.dir/Board.cpp.o -c /home/firgaty/Prog/Cpp/Chess/Board.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Chess.dir/Board.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Chess.dir/Board.cpp.o -c /home/firgaty/Prog/Projects/Chess/Board.cpp
 
 CMakeFiles/Chess.dir/Board.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Chess.dir/Board.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Cpp/Chess/Board.cpp > CMakeFiles/Chess.dir/Board.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Projects/Chess/Board.cpp > CMakeFiles/Chess.dir/Board.cpp.i
 
 CMakeFiles/Chess.dir/Board.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Chess.dir/Board.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Cpp/Chess/Board.cpp -o CMakeFiles/Chess.dir/Board.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Projects/Chess/Board.cpp -o CMakeFiles/Chess.dir/Board.cpp.s
 
 CMakeFiles/Chess.dir/Board.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/Chess.dir/Board.cpp.o.provides.build: CMakeFiles/Chess.dir/Board.cpp.
 
 CMakeFiles/Chess.dir/PiecesOnBoard.cpp.o: CMakeFiles/Chess.dir/flags.make
 CMakeFiles/Chess.dir/PiecesOnBoard.cpp.o: ../PiecesOnBoard.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Cpp/Chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Chess.dir/PiecesOnBoard.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Chess.dir/PiecesOnBoard.cpp.o -c /home/firgaty/Prog/Cpp/Chess/PiecesOnBoard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Chess.dir/PiecesOnBoard.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Chess.dir/PiecesOnBoard.cpp.o -c /home/firgaty/Prog/Projects/Chess/PiecesOnBoard.cpp
 
 CMakeFiles/Chess.dir/PiecesOnBoard.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Chess.dir/PiecesOnBoard.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Cpp/Chess/PiecesOnBoard.cpp > CMakeFiles/Chess.dir/PiecesOnBoard.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Projects/Chess/PiecesOnBoard.cpp > CMakeFiles/Chess.dir/PiecesOnBoard.cpp.i
 
 CMakeFiles/Chess.dir/PiecesOnBoard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Chess.dir/PiecesOnBoard.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Cpp/Chess/PiecesOnBoard.cpp -o CMakeFiles/Chess.dir/PiecesOnBoard.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Projects/Chess/PiecesOnBoard.cpp -o CMakeFiles/Chess.dir/PiecesOnBoard.cpp.s
 
 CMakeFiles/Chess.dir/PiecesOnBoard.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/Chess.dir/PiecesOnBoard.cpp.o.provides.build: CMakeFiles/Chess.dir/Pi
 
 CMakeFiles/Chess.dir/DrawBoard.cpp.o: CMakeFiles/Chess.dir/flags.make
 CMakeFiles/Chess.dir/DrawBoard.cpp.o: ../DrawBoard.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Cpp/Chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Chess.dir/DrawBoard.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Chess.dir/DrawBoard.cpp.o -c /home/firgaty/Prog/Cpp/Chess/DrawBoard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Chess.dir/DrawBoard.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Chess.dir/DrawBoard.cpp.o -c /home/firgaty/Prog/Projects/Chess/DrawBoard.cpp
 
 CMakeFiles/Chess.dir/DrawBoard.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Chess.dir/DrawBoard.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Cpp/Chess/DrawBoard.cpp > CMakeFiles/Chess.dir/DrawBoard.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Projects/Chess/DrawBoard.cpp > CMakeFiles/Chess.dir/DrawBoard.cpp.i
 
 CMakeFiles/Chess.dir/DrawBoard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Chess.dir/DrawBoard.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Cpp/Chess/DrawBoard.cpp -o CMakeFiles/Chess.dir/DrawBoard.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Projects/Chess/DrawBoard.cpp -o CMakeFiles/Chess.dir/DrawBoard.cpp.s
 
 CMakeFiles/Chess.dir/DrawBoard.cpp.o.requires:
 
@@ -189,7 +189,7 @@ Chess: /usr/lib64/libsfml-graphics.so
 Chess: /usr/lib64/libsfml-network.so
 Chess: /usr/lib64/libsfml-audio.so
 Chess: CMakeFiles/Chess.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/firgaty/Prog/Cpp/Chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Chess"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Chess"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Chess.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -209,6 +209,6 @@ CMakeFiles/Chess.dir/clean:
 .PHONY : CMakeFiles/Chess.dir/clean
 
 CMakeFiles/Chess.dir/depend:
-	cd /home/firgaty/Prog/Cpp/Chess/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/firgaty/Prog/Cpp/Chess /home/firgaty/Prog/Cpp/Chess /home/firgaty/Prog/Cpp/Chess/cmake-build-debug /home/firgaty/Prog/Cpp/Chess/cmake-build-debug /home/firgaty/Prog/Cpp/Chess/cmake-build-debug/CMakeFiles/Chess.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/firgaty/Prog/Projects/Chess/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/firgaty/Prog/Projects/Chess /home/firgaty/Prog/Projects/Chess /home/firgaty/Prog/Projects/Chess/cmake-build-debug /home/firgaty/Prog/Projects/Chess/cmake-build-debug /home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Chess.dir/depend
 
