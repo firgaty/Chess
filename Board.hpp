@@ -22,6 +22,7 @@ public:
 
 
     bool checkCase(unsigned int x, unsigned int y);
+    void printBoard() const;
 
     // GETTERS AND SETTERS:
     int *getBoard();
@@ -32,7 +33,7 @@ public:
 
 
 private:
-    int *m_board;
+    int m_board[64];
     unsigned int m_width;
     unsigned int m_height;
 

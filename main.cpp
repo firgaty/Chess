@@ -35,9 +35,9 @@ int main()
                      4,  3,  2,  1,  0,  2,  3,  4,
             };
 
-    Board *pBoard = new Board();
-
-    if(!pOBoard.load("images/textures/pieces.png", sf::Vector2u(96, 96), pieces,8, 8))
+    Board pBoard;
+    pBoard.setAt(5, 4, 3);
+    if(!pOBoard.load("images/textures/pieces.png", sf::Vector2u(96, 96), pBoard.getBoard(),8, 8))
         return -1;
 
     while (window.isOpen()) {

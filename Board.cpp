@@ -27,7 +27,9 @@ Board::Board() {
  * @return
  */
 bool Board::setBoard(int *board, unsigned int width, unsigned int height) {
-    this->m_board = board;
+    for(int i(0); i < width*height; i++ ) {
+        this->m_board[i] = board[i];
+    }
     this->m_width = width;
     this->m_height = height;
     return true;
@@ -84,9 +86,24 @@ void Board::reset(int mode) {
             break;
     }
 }
-
+/**
+ *
+ * @return int[] the board
+ */
 int* Board::getBoard() {
+    this->printBoard();
     return this->m_board;
+}
+/**
+ *  Prints the Board in the terminal.
+ */
+void Board::printBoard() const {
+    for(int j(0); j < this->m_height; j++) {
+        for(int i(0); i < this->m_width; i++) {
+            std::cout << this->m_board[i + j * 8] << ", ";
+        }
+        std::cout << std::endl;
+    }
 }
 
 
