@@ -4,48 +4,89 @@
 
 #include "Board.hpp"
 
-bool Board::load(const std::string& texture, sf::Vector2u tileSize, unsigned int width, unsigned int height)
-{
-    // load the tileset texture
-    if (!m_texture.loadFromFile(texture))
-        return false;
+Board::Board() {
+    int pieces[] =
+            {
+                    10,  9,  8,  7,  6,  8,  9, 10,
+                    11, 11, 11, 11, 11, 11, 11, 11,
+                    -1, -1, -1, -1, -1, -1, -1, -1,
+                    -1, -1, -1, -1, -1, -1, -1, -1,
+                    -1, -1, -1, -1, -1, -1, -1, -1,
+                    -1, -1, -1, -1, -1, -1, -1, -1,
+                     5,  5,  5,  5,  5,  5,  5,  5,
+                     4,  3,  2,  1,  0,  2,  3,  4,
+            };
+    this->setBoard(pieces, 8, 8);
 
+}
 
-    // resize the vertex array to fit the level size
-    m_vertices.setPrimitiveType(sf::Quads);
-    m_vertices.resize(width * height * 4);
-
-    // populate the vertex array, with one quad per tile
-    for (unsigned int i = 0; i < width; ++i)
-        for (unsigned int j = 0; j < height; ++j)
-        {
-            // get a pointer to the current tile's quad
-            sf::Vertex* quad = &m_vertices[(i + j * width) * 4];
-
-            // define its 4 corners
-            quad[0].position = sf::Vector2f(i * tileSize.x, j * tileSize.y);
-            quad[1].position = sf::Vector2f((i + 1) * tileSize.x, j * tileSize.y);
-            quad[2].position = sf::Vector2f((i + 1) * tileSize.x, (j + 1) * tileSize.y);
-            quad[3].position = sf::Vector2f(i * tileSize.x, (j + 1) * tileSize.y);
-
-            // define its 4 texture coordinates
-            quad[0].texCoords = sf::Vector2f(((i + j) % 2) * tileSize.x, 0);
-            quad[1].texCoords = sf::Vector2f(((i + j) % 2 + 1) * tileSize.x, 0);
-            quad[2].texCoords = sf::Vector2f(((i + j) % 2 + 1) * tileSize.x, tileSize.y);
-            quad[3].texCoords = sf::Vector2f(((i + j) % 2) * tileSize.x, tileSize.y);
-        }
-
+/**
+ * @param board
+ * @param width
+ * @param height
+ * @return
+ */
+bool Board::setBoard(int *board, unsigned int width, unsigned int height) {
+    this->m_board = board;
+    this->m_width = width;
+    this->m_height = height;
     return true;
 }
 
-void Board::draw(sf::RenderTarget& target, sf::RenderStates states) const
-{
-    // apply the transform
-    states.transform *= getTransform();
-
-    // apply the tileset texture
-    states.texture = &m_texture;
-
-    // draw the vertex array
-    target.draw(m_vertices, states);
+/**
+ * @param x
+ * @param y
+ * @return piece at (x,y)
+ */
+int Board::at(unsigned int x, unsigned int y) {
+    if(!this->checkCase(x, y)) return -1;
+    return this->m_board[x + y * this->m_width];
 }
+/**
+ * @param x
+ * @param y
+ * @param piece
+ * @return true if case could be set.
+ */
+bool Board::setAt(unsigned int x, unsigned int y, int piece) {
+    if(!this->checkCase(x, y)) return false;
+    int out(this->m_board[x + y * this->m_width]);
+    this->m_board[x + y * this->m_width] = piece;
+    return true;
+}
+/**
+ * @param x
+ * @param y
+ * @return true if case in board.
+ */
+bool Board::checkCase(unsigned int x, unsigned int y) {
+    return x >= 0 && x < this->m_width && y >= 0 && y < this->m_height;
+}
+
+/**
+ * @param mode
+ */
+void Board::reset(int mode) {
+    switch (mode) {
+        case 0 :
+            int pieces[] =
+                    {
+                            10,  9,  8,  7,  6,  8,  9, 10,
+                            11, 11, 11, 11, 11, 11, 11, 11,
+                            -1, -1, -1, -1, -1, -1, -1, -1,
+                            -1, -1, -1, -1, -1, -1, -1, -1,
+                            -1, -1, -1, -1, -1, -1, -1, -1,
+                            -1, -1, -1, -1, -1, -1, -1, -1,
+                             5,  5,  5,  5,  5,  5,  5,  5,
+                             4,  3,  2,  1,  0,  2,  3,  4,
+                    };
+            this->setBoard(pieces, 8, 8);
+            break;
+    }
+}
+
+int* Board::getBoard() {
+    return this->m_board;
+}
+
+
