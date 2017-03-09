@@ -59,7 +59,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Chess.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/Chess.cbp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -513,7 +512,7 @@
       <workItem from="1488970967773" duration="4327000" />
       <workItem from="1488978843962" duration="1228000" />
       <workItem from="1488989554794" duration="627000" />
-      <workItem from="1489071235825" duration="3432000" />
+      <workItem from="1489071235825" duration="3457000" />
     </task>
     <task id="LOCAL-00001" summary="Updated TODO">
       <created>1489081383207</created>
@@ -529,11 +528,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489091381117</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update">
+      <created>1489091417597</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1489091417597</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36938000" />
+    <option name="totallyTimeSpent" value="36963000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1608" height="900" extended-state="6" />
@@ -570,7 +576,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated TODO" />
     <MESSAGE value="Board class moved to DrawBoard, Board class now handles the board manipulations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Board class moved to DrawBoard, Board class now handles the board manipulations" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
