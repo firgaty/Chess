@@ -49,7 +49,7 @@ void Board::reset(int mode) {
  * @param y
  * @return true if case in board.
  */
-bool Board::checkCase(int x, int y) {
+bool Board::isInBoard(int x, int y) {
     return x >= 0 && x < this->m_width && y >= 0 && y < this->m_height;
 }
 /**
@@ -130,7 +130,7 @@ int* Board::movesKing(unsigned int x, unsigned int y) {
     int count(0);
     for(int j(y - 1); j <= (y + 1); j++) {
         for(int i(x - 1); i <= (x + 1); i++) {
-            if(this->checkCase(x, y))
+            if(this->isInBoard(x, y))
                 if(!this->isOccupied(i, j) || this->isOpponent(i, j, this->at(x, y))) {
                     pos[count] = getPos(x, y);
                     count++;
@@ -189,7 +189,7 @@ bool Board::setBoard(int *board, unsigned int width, unsigned int height) {
  * @return piece at (x,y)
  */
 int Board::at(unsigned int x, unsigned int y) {
-    if(!this->checkCase(x, y)) return -1;
+    if(!this->isInBoard(x, y)) return -1;
     return this->m_board[x + y * this->m_width];
 }
 
@@ -200,7 +200,7 @@ int Board::at(unsigned int x, unsigned int y) {
  * @return true if case could be set.
  */
 bool Board::setAt(unsigned int x, unsigned int y, int piece) {
-    if(!this->checkCase(x, y)) return false;
+    if(!this->isInBoard(x, y)) return false;
     int out(this->m_board[x + y * this->m_width]);
     this->m_board[x + y * this->m_width] = piece;
     return true;
@@ -236,9 +236,21 @@ int* Board::reduceArray(int* array) {
 }
 
 int* Board::diagonalMoves(unsigned int x, unsigned int y, bool down, bool right) {
+    int moves[100];
+    int d = (down) ? 1 : -1;
+    int r = (right) ? 1 : -1;
 
+    int i(1);
+    while(this->isInBoard(i * r, i * r) && (!this->isOccupied((unsigned int) i * r, (unsigned int)i * r) || this->isOpponent((unsigned int)i * r, (unsigned int)i * r, this->at(x, y)))) {
+        moves[i - 1] = this->getPos((unsigned int)i * r, (unsigned int)i * d);
+        i++;
+        if(this->isOpponent((unsigned int)i * r, (unsigned int)i * r, this->at(x, y))) break;
+    }
+    moves[i - 1] = -1;
+    int* out = moves;
+    return out;
 }
 
 int* Board::concArrays(int *array1, int *array2) {
-    
+
 }

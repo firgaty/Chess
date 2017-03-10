@@ -19,7 +19,7 @@ public:
     void reset(int mode = 0);
 
 
-    bool checkCase(int x, int y);
+    bool isInBoard (int x, int y);
     bool isOccupied(unsigned int x, unsigned int y);
     bool isOpponent(unsigned int x, unsigned int y, int piece);
     void printBoard() const;
