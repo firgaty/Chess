@@ -131,7 +131,7 @@ int* Board::movesKing(unsigned int x, unsigned int y) {
     for(int j(y - 1); j <= (y + 1); j++) {
         for(int i(x - 1); i <= (x + 1); i++) {
             if(this->isInBoard(x, y))
-                if(!this->isOccupied(i, j) || this->isOpponent(i, j, this->at(x, y))) {
+                if(!this->isOccupied((unsigned int) i, (unsigned int) j) || this->isOpponent((unsigned int) i, (unsigned int) j, this->at(x, y))) {
                     pos[count] = getPos(x, y);
                     count++;
                 }
@@ -144,8 +144,14 @@ int* Board::movesKing(unsigned int x, unsigned int y) {
 int* Board::movesQueen(unsigned int x, unsigned int y) {
 }
 int* Board::movesBishop(unsigned int x, unsigned int y) {
+    int* dr = this->diagonalMoves(x, y, true, true);
+    int* dl = this->diagonalMoves(x, y, true, false);
+    int* ur = this->diagonalMoves(x, y, false, true);
+    int* ul = this->diagonalMoves(x, y, false, false);
 
+    return this->concArrays(dr, this->concArrays(dl, this->concArrays(ur, ul)));
 }
+
 int* Board::movesKnight(unsigned int x, unsigned int y) {}
 int* Board::movesRook(unsigned int x, unsigned int y) {}
 int* Board::movesPawn(unsigned int x, unsigned int y) {}
@@ -250,14 +256,58 @@ int* Board::diagonalMoves(unsigned int x, unsigned int y, bool down, bool right)
     int r = (right) ? 1 : -1;
 
     int i(1);
-    while(this->isInBoard(i * r, i * r) && (!this->isOccupied((unsigned int) i * r, (unsigned int)i * r) || this->isOpponent((unsigned int)i * r, (unsigned int)i * r, this->at(x, y)))) {
-        moves[i - 1] = this->getPos((unsigned int)i * r, (unsigned int)i * d);
+    while(this->isInBoard((int) (x) + i * r, (int) (y) + i * d) &&
+            (!this->isOccupied(x + i * r, y + i * d) || this->isOpponent(x + i * r, y + i * d, this->at(x, y)))) {
+        moves[i - 1] = this->getPos(x + i * r, y + i * d);
         i++;
-        if(this->isOpponent((unsigned int)i * r, (unsigned int)i * r, this->at(x, y))) break;
+        if(this->isOpponent(x + i * r, y + i * d, this->at(x, y))) break;
     }
     moves[i - 1] = -1;
     int* out = moves;
     return out;
+}
+/**
+ *
+ * @param x
+ * @param y
+ * @param mode 0 : left, 1: down, 2 : right, 3 : up.
+ * @return
+ */
+int* Board::lineMoves(unsigned int x, unsigned int y, int mode) {
+    int xop;
+    int yop;
+    int i(1);
+    int moves[100];
+
+    switch (mode) {
+        case 0:
+            xop = -1;
+            yop = 0;
+            break;
+        case 1:
+            xop = 0;
+            yop = 1;
+            break;
+        case 2:
+            xop = 1;
+            yop = 0;
+            break;
+        case 3:
+            xop = 0;
+            yop = -1;
+           break;
+        default:
+            xop = 1;
+            yop = 1;
+    }
+
+    while(this->isInBoard((int) (x) + i * xop, (int) (y) + i * yop) &&
+          (!this->isOccupied(x + i * xop, y + i * yop) || this->isOpponent(x + i * xop, y + i * yop, this->at(x, y)))) {
+        moves[i - 1] = this->getPos(x + i * xop, y + i * yop);
+        i++;
+        if(this->isOpponent(x + i * xop, y + i * yop, this->at(x, y))) break;
+    }
+
 }
 
 int* Board::concArrays(int *array1, int *array2) {

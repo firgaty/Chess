@@ -54,6 +54,8 @@ private:
     int* reduceArray(int* array);
     int arrayLength(int* array);
     int* diagonalMoves(unsigned int x, unsigned int y, bool down, bool right);
+    int* lineMoves(unsigned int x, unsigned int y, int mode);
+    // 0 : left, 1: down, 2 : right, 3 : up.
     int* concArrays(int* array1, int* array2);
 };
 
