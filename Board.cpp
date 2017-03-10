@@ -19,56 +19,7 @@ Board::Board() {
     this->setBoard(pieces, 8, 8);
 
 }
-/**
- * @param x
- * @param y
- * @return a pointer to ant int[] that contains the positions in board of the different moves.
- */
-int* Board::moves(unsigned int x, unsigned int y) {
-    std::string str = (this->at(x, y) / 6 == 0) ? "White" : "black";
-    int* moves;
-    int count(0);
 
-    switch(this->at(x, y) % 6) {
-        case 0 : std::cout << str << " King :";
-            moves = movesKing(x, y);
-            break;
-        case 1 : std::cout << str << " Queen :";
-            moves = movesQueen(x, y);
-            break;
-        case 2 : std::cout << str << " Bishop :";
-            moves = movesBishop(x, y);
-            break;
-        case 3 : std::cout << str << " Knight :";
-            moves = movesKnight(x, y);
-            break;
-        case 4 : std::cout << str << " Rook :";
-            moves = movesRook(x, y);
-            break;
-        case 5 : std::cout << str << " Pawn :";
-            moves = movesPawn(x, y);
-            break;
-        default:
-            moves = NULL;
-            break;
-    }
-
-}
-
-/**
- *
- * @param x1
- * @param y1
- * @param x2
- * @param y2
- * @return the piece that was on the arriving case.
- */
-int Board::move(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2) {
-    int out = this->at(x2, y2);
-    setAt(x2, y2, at(x1, y1));
-    setAt(x1, y1, -1);
-    return out;
-}
 /**
  * @param mode
  */
@@ -118,7 +69,83 @@ bool Board::isOccupied(unsigned int x, unsigned int y) {
 bool Board::isOpponent(unsigned int x, unsigned int y, int piece) {
     return (this->at(x, y) / 2) != (piece / 2);
 }
+/**
+ * @param x
+ * @param y
+ * @return a pointer to ant int[] that contains the positions in board of the different moves.
+ */
+int* Board::moves(unsigned int x, unsigned int y) {
+    std::string str = (this->at(x, y) / 6 == 0) ? "White" : "black";
+    int *moves;
 
+    switch(this->at(x, y) % 6) {
+        case 0 : std::cout << str << " King :";
+            moves = movesKing(x, y);
+            break;
+        case 1 : std::cout << str << " Queen :";
+            moves = movesQueen(x, y);
+            break;
+        case 2 : std::cout << str << " Bishop :";
+            moves = movesBishop(x, y);
+            break;
+        case 3 : std::cout << str << " Knight :";
+            moves = movesKnight(x, y);
+            break;
+        case 4 : std::cout << str << " Rook :";
+            moves = movesRook(x, y);
+            break;
+        case 5 : std::cout << str << " Pawn :";
+            moves = movesPawn(x, y);
+            break;
+        default:
+            int out[] = {-1};
+            moves = out;
+            break;
+    }
+
+    // Now we reduce the array to the minimum;
+    // We suppose every position to be different;
+    // last element of array is -1;
+    int* out = this->reduceArray(moves);
+    return out;
+}
+
+/**
+ *
+ * @param x1
+ * @param y1
+ * @param x2
+ * @param y2
+ * @return the piece that was on the arriving case.
+ */
+int Board::move(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2) {
+    int out = this->at(x2, y2);
+    setAt(x2, y2, at(x1, y1));
+    setAt(x1, y1, -1);
+    return out;
+}
+
+int* Board::movesKing(unsigned int x, unsigned int y) {
+    int pos[20];
+    int count(0);
+    for(int j(y - 1); j <= (y + 1); j++) {
+        for(int i(x - 1); i <= (x + 1); i++) {
+            if(this->checkCase(x, y))
+                if(!this->isOccupied(i, j) || this->isOpponent(i, j, this->at(x, y))) {
+                    pos[count] = getPos(x, y);
+                    count++;
+                }
+        }
+    }
+    pos[count] = -1;
+    int* out = pos;
+    return out;
+}
+int* Board::movesQueen(unsigned int x, unsigned int y) {}
+int* Board::movesBishop(unsigned int x, unsigned int y) {}
+int* Board::movesKnight(unsigned int x, unsigned int y) {}
+int* Board::movesRook(unsigned int x, unsigned int y) {}
+int* Board::movesPawn(unsigned int x, unsigned int y) {}
 /**
  *  Prints the Board in the terminal.
  */
@@ -145,7 +172,7 @@ int* Board::getBoard() {
  * @return true if board could be set.
  */
 bool Board::setBoard(int *board, unsigned int width, unsigned int height) {
-    for(int i(0); i < width*height; i++ ) {
+    for(int i(0); i < width * height; i++ ) {
         this->m_board[i] = board[i];
     }
     this->m_width = width;
@@ -186,4 +213,21 @@ unsigned int Board::getY(unsigned int pos) {
 
 unsigned int Board::getPos(unsigned int x, unsigned int y) {
     return x + y * m_width;
+}
+
+
+// PRIVATE
+
+int* Board::reduceArray(int* array) {
+    int i(0);
+    while(array[i] >= 0) {
+        i++;
+    }
+    int foo[i + 1];
+    for(int j(0); j < i; j++) {
+        foo[j] = array[j];
+    }
+    foo[i] = -1;
+    int* out = foo;
+    return out;
 }

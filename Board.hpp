@@ -16,8 +16,6 @@ public:
     Board();
     Board(int *plateau, unsigned int width, unsigned int height);
 
-    int* moves(unsigned int x, unsigned int y); // Gives all possible moves of a given piece at the coordinates (x,y) in a int[].
-    int move(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2); // Moves piece from (x1,y1) to (x2,y2) and returns the piece that was at (x2,y2);
     void reset(int mode = 0);
 
 
@@ -27,6 +25,9 @@ public:
     void printBoard() const;
 
     // Different pieces moves:
+
+    int* moves(unsigned int x, unsigned int y); // Gives all possible moves of a given piece at the coordinates (x,y) in a int[].
+    int move(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2); // Moves piece from (x1,y1) to (x2,y2) and returns the piece that was at (x2,y2);
     int* movesKing(unsigned int x, unsigned int y);
     int* movesQueen(unsigned int x, unsigned int y);
     int* movesBishop(unsigned int x, unsigned int y);
@@ -49,6 +50,8 @@ private:
     int m_board[64];
     unsigned int m_width;
     unsigned int m_height;
+
+    int* reduceArray(int* array);
 
 };
 
