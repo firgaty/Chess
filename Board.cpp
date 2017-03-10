@@ -307,6 +307,9 @@ int* Board::lineMoves(unsigned int x, unsigned int y, int mode) {
         i++;
         if(this->isOpponent(x + i * xop, y + i * yop, this->at(x, y))) break;
     }
+    moves[i - 1] = -1;
+    int* out = moves;
+    return out;
 
 }
 
