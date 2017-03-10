@@ -193,6 +193,21 @@ int* Board::movesRook(unsigned int x, unsigned int y) {
     return this->concArrays(l, this->concArrays(d, this->concArrays(r, u)));
 }
 int* Board::movesPawn(unsigned int x, unsigned int y) {
+    int moves[5];
+    int direction = (at(x, y) / 6 == 0) ? -1 : 1; // -1 : White, 1: Black. Sets direction.
+    int count(0);
+    if()
+
+
+
+    switch (direction) {
+        case -1:
+            break;
+        case 1:
+            break;
+        default:
+            break;
+    }
 
 }
 /**
