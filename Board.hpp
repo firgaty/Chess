@@ -21,15 +21,28 @@ public:
     void reset(int mode = 0);
 
 
-    bool checkCase(unsigned int x, unsigned int y);
+    bool checkCase(int x, int y);
+    bool isOccupied(unsigned int x, unsigned int y);
+    bool isOpponent(unsigned int x, unsigned int y, int piece);
     void printBoard() const;
+
+    // Different pieces moves:
+    int* movesKing(unsigned int x, unsigned int y);
+    int* movesQueen(unsigned int x, unsigned int y);
+    int* movesBishop(unsigned int x, unsigned int y);
+    int* movesKnight(unsigned int x, unsigned int y);
+    int* movesRook(unsigned int x, unsigned int y);
+    int* movesPawn(unsigned int x, unsigned int y);
 
     // GETTERS AND SETTERS:
     int *getBoard();
+    bool setBoard(int *board, unsigned int width = 8, unsigned int height = 8);
     int at(unsigned int x, unsigned int y); //returns the piece at (x,y).
     bool setAt(unsigned int x, unsigned int y, int piece); // returns true if the piece could be set.
-    bool setBoard(int *board, unsigned int width = 8, unsigned int height = 8);
 
+    unsigned int getX(unsigned int pos);
+    unsigned int getY(unsigned int pos);
+    unsigned int getPos(unsigned int x, unsigned int y);
 
 
 private:
