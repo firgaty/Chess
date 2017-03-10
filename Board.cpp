@@ -142,6 +142,10 @@ int* Board::movesKing(unsigned int x, unsigned int y) {
     return out;
 }
 int* Board::movesQueen(unsigned int x, unsigned int y) {
+    int* diagonal = this->movesBishop(x, y);
+    int* line = this->movesRook(x, y);
+
+    return this->concArrays(diagonal, line);
 }
 int* Board::movesBishop(unsigned int x, unsigned int y) {
     int* dr = this->diagonalMoves(x, y, true, true);
@@ -152,9 +156,45 @@ int* Board::movesBishop(unsigned int x, unsigned int y) {
     return this->concArrays(dr, this->concArrays(dl, this->concArrays(ur, ul)));
 }
 
-int* Board::movesKnight(unsigned int x, unsigned int y) {}
-int* Board::movesRook(unsigned int x, unsigned int y) {}
-int* Board::movesPawn(unsigned int x, unsigned int y) {}
+int* Board::movesKnight(unsigned int x, unsigned int y) {
+    int possibleMoves[] = {
+            1, 2,
+            1, -2,
+            2, 1,
+            2, -1,
+            -1, 2,
+            -1, -2,
+            -2, 1,
+            -2, -1,
+    };
+
+    int moves[10];
+    int count(0);
+
+    for(int i(0); i < 8; i+=2) {
+        if(this->isInBoard(x + possibleMoves[i], y + possibleMoves[i + 2]))
+            if(!this->isOccupied(x + possibleMoves[i], y + possibleMoves[i + 2])
+               || this->isOpponent(x + possibleMoves[i], y + possibleMoves[i + 2], this->at(x, y))) {
+                moves[count] = getPos(x + possibleMoves[i], y + possibleMoves[i + 2]);
+                count++;
+            }
+    }
+    moves[count] = -1;
+    int* out = moves;
+    return out;
+
+}
+int* Board::movesRook(unsigned int x, unsigned int y) {
+    int* l = this->lineMoves(x, y, 0);
+    int* d = this->lineMoves(x, y, 1);
+    int* r = this->lineMoves(x, y, 2);
+    int* u = this->lineMoves(x, y, 3);
+
+    return this->concArrays(l, this->concArrays(d, this->concArrays(r, u)));
+}
+int* Board::movesPawn(unsigned int x, unsigned int y) {
+
+}
 /**
  *  Prints the Board in the terminal.
  */
