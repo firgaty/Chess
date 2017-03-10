@@ -141,8 +141,11 @@ int* Board::movesKing(unsigned int x, unsigned int y) {
     int* out = pos;
     return out;
 }
-int* Board::movesQueen(unsigned int x, unsigned int y) {}
-int* Board::movesBishop(unsigned int x, unsigned int y) {}
+int* Board::movesQueen(unsigned int x, unsigned int y) {
+}
+int* Board::movesBishop(unsigned int x, unsigned int y) {
+
+}
 int* Board::movesKnight(unsigned int x, unsigned int y) {}
 int* Board::movesRook(unsigned int x, unsigned int y) {}
 int* Board::movesPawn(unsigned int x, unsigned int y) {}
@@ -230,4 +233,12 @@ int* Board::reduceArray(int* array) {
     foo[i] = -1;
     int* out = foo;
     return out;
+}
+
+int* Board::diagonalMoves(unsigned int x, unsigned int y, bool down, bool right) {
+
+}
+
+int* Board::concArrays(int *array1, int *array2) {
+    
 }

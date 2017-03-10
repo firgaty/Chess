@@ -52,7 +52,8 @@ private:
     unsigned int m_height;
 
     int* reduceArray(int* array);
-
+    int* diagonalMoves(unsigned int x, unsigned int y, bool down, bool right);
+    int* concArrays(int* array1, int* array2);
 };
 
 
