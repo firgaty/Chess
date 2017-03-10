@@ -235,6 +235,15 @@ int* Board::reduceArray(int* array) {
     return out;
 }
 
+int Board::arrayLength(int *array) {
+    int i(0);
+    while(array[i] >= 0) {
+        i++;
+    }
+
+    return i;
+}
+
 int* Board::diagonalMoves(unsigned int x, unsigned int y, bool down, bool right) {
     int moves[100];
     int d = (down) ? 1 : -1;
@@ -252,5 +261,17 @@ int* Board::diagonalMoves(unsigned int x, unsigned int y, bool down, bool right)
 }
 
 int* Board::concArrays(int *array1, int *array2) {
+    array1 = reduceArray(array1);
+    array2 = reduceArray(array2);
+    int array[this->arrayLength(array1) + this->arrayLength(array2)];
 
+    for (int i(0); i < this->arrayLength(array1); i++) {
+        array[i] = array1[i];
+    }
+    for(int i(this->arrayLength(array1)); i <= this->arrayLength(array2); i++ ) {
+        array[i] = array2[i];
+    }
+
+    int* out = array;
+    return out;
 }

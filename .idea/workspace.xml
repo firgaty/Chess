@@ -79,8 +79,8 @@
           <file leaf-file-name="Board.cpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Board.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="622">
-                  <caret line="254" column="0" lean-forward="true" selection-start-line="254" selection-start-column="0" selection-end-line="254" selection-end-column="0" />
+                <state relative-caret-position="221">
+                  <caret line="249" column="29" lean-forward="true" selection-start-line="249" selection-start-column="29" selection-end-line="249" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -103,8 +103,8 @@
           <file leaf-file-name="Board.hpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Board.hpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="72">
-                  <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+                <state relative-caret-position="491">
+                  <caret line="54" column="14" lean-forward="false" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
@@ -498,7 +498,7 @@
       <workItem from="1488989554794" duration="627000" />
       <workItem from="1489071235825" duration="3457000" />
       <workItem from="1489138256690" duration="3341000" />
-      <workItem from="1489142950610" duration="9812000" />
+      <workItem from="1489142950610" duration="12215000" />
     </task>
     <task id="LOCAL-00001" summary="Updated TODO">
       <created>1489081383207</created>
@@ -542,11 +542,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489149694024</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Finished diagonalMoves(); not tested. Renamed checkCase() to isInBoard()">
+      <created>1489156422124</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1489156422124</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50116000" />
+    <option name="totallyTimeSpent" value="52519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="900" extended-state="6" />
@@ -588,7 +595,8 @@
     <MESSAGE value="Beginning to implement different moves." />
     <MESSAGE value="Implemented King's moves : not tested" />
     <MESSAGE value="added diagonal moves and concArrays" />
-    <option name="LAST_COMMIT_MESSAGE" value="added diagonal moves and concArrays" />
+    <MESSAGE value="Finished diagonalMoves(); not tested. Renamed checkCase() to isInBoard()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished diagonalMoves(); not tested. Renamed checkCase() to isInBoard()" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -842,16 +850,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Board.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        <state relative-caret-position="491">
+          <caret line="54" column="14" lean-forward="false" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Board.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="254" column="0" lean-forward="true" selection-start-line="254" selection-start-column="0" selection-end-line="254" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="249" column="29" lean-forward="true" selection-start-line="249" selection-start-column="29" selection-end-line="249" selection-end-column="29" />
           <folding />
         </state>
       </provider>
