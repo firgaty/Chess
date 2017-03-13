@@ -39,6 +39,20 @@ void Board::reset(int mode) {
                     };
             this->setBoard(pieces, 8, 8);
             break;
+        case 1 : // Test moves.
+            int tpieces[] =
+                    {
+                            -1, -1, -1, -1, -1, -1, -1, -1,
+                            -1,  4, -1, -1, -1, -1, -1, -1,
+                            -1, -1, -1,  3, -1, -1, -1, -1,
+                            -1, -1, -1, -1, -1, -1,  1, -1,
+                            -1, -1, -1, -1, -1, -1,  6, -1,
+                            -1,  0, -1, -1,  2,  5, -1, -1,
+                            -1, -1, -1,  5, -1, -1, -1, -1,
+                            -1, -1, -1, -1, -1, -1, -1, -1,
+                    };
+            this->setBoard(tpieces, 8, 8);
+            break;
     }
 }
 
@@ -96,22 +110,25 @@ int* Board::moves(unsigned int x, unsigned int y) {
             break;
         case 5 : std::cout << str << " Pawn :";
             moves = movesPawn(x, y);
+            this->printMoves(moves);
             break;
         default:
+            std::cout << "NONE :" << this->at(x, y) % 6;
             int out[] = {-1};
             moves = out;
             break;
     }
+    std::cout << "\n" << std::endl;
 
     // Now we reduce the array to the minimum;
     // We suppose every position to be different;
     // last element of array is -1;
-    int* out = this->reduceArray(moves);
-    return out;
+    moves = this->reduceArray(moves);
+    this->printMoves(moves);
+    return moves;
 }
 
 /**
- *
  * @param x1
  * @param y1
  * @param x2
@@ -124,7 +141,11 @@ int Board::move(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int 
     setAt(x1, y1, -1);
     return out;
 }
-
+/**
+ * @param x
+ * @param y
+ * @return the moves of the king on (x,y)
+ */
 int* Board::movesKing(unsigned int x, unsigned int y) {
     int pos[20];
     int count(0);
@@ -141,12 +162,22 @@ int* Board::movesKing(unsigned int x, unsigned int y) {
     int* out = pos;
     return out;
 }
+/**
+ * @param x
+ * @param y
+ * @return the moves of the Queen on (x,y)
+ */
 int* Board::movesQueen(unsigned int x, unsigned int y) {
     int* diagonal = this->movesBishop(x, y);
     int* line = this->movesRook(x, y);
 
     return this->concArrays(diagonal, line);
 }
+/**
+ * @param x
+ * @param y
+ * @return the moves of the bishop on (x,y)
+ */
 int* Board::movesBishop(unsigned int x, unsigned int y) {
     int* dr = this->diagonalMoves(x, y, true, true);
     int* dl = this->diagonalMoves(x, y, true, false);
@@ -155,23 +186,27 @@ int* Board::movesBishop(unsigned int x, unsigned int y) {
 
     return this->concArrays(dr, this->concArrays(dl, this->concArrays(ur, ul)));
 }
-
+/**
+ * @param x
+ * @param y
+ * @return the moves of the knight on (x,y)
+ */
 int* Board::movesKnight(unsigned int x, unsigned int y) {
     int possibleMoves[] = {
-            1, 2,
-            1, -2,
-            2, 1,
-            2, -1,
-            -1, 2,
+             1,  2,
+             1, -2,
+             2,  1,
+             2, -1,
+            -1,  2,
             -1, -2,
-            -2, 1,
+            -2,  1,
             -2, -1,
     };
 
     int moves[10];
     int count(0);
 
-    for(int i(0); i < 8; i+=2) {
+    for(int i(0); i < 16; i+=2) {
         if(this->isInBoard(x + possibleMoves[i], y + possibleMoves[i + 2]))
             if(!this->isOccupied(x + possibleMoves[i], y + possibleMoves[i + 2])
                || this->isOpponent(x + possibleMoves[i], y + possibleMoves[i + 2], this->at(x, y))) {
@@ -184,6 +219,11 @@ int* Board::movesKnight(unsigned int x, unsigned int y) {
     return out;
 
 }
+/**
+ * @param x
+ * @param y
+ * @return the moves of the rook on (x,y)
+ */
 int* Board::movesRook(unsigned int x, unsigned int y) {
     int* l = this->lineMoves(x, y, 0);
     int* d = this->lineMoves(x, y, 1);
@@ -192,23 +232,40 @@ int* Board::movesRook(unsigned int x, unsigned int y) {
 
     return this->concArrays(l, this->concArrays(d, this->concArrays(r, u)));
 }
+/**
+ * @param x
+ * @param y
+ * @return the moves of the pawn on (x,y)
+ */
 int* Board::movesPawn(unsigned int x, unsigned int y) {
     int moves[5];
     int direction = (at(x, y) / 6 == 0) ? -1 : 1; // -1 : White, 1: Black. Sets direction.
     int count(0);
-    if()
 
+    //Test if there are any piece on each sides:
+    if(at(x - 1, y + direction) >= 0) {
+        moves[count] = getPos(x - 1, y + direction);
+        count++;
+    }
+    if(at(x + 1, y + direction) >= 0) {
+        moves[count] = getPos(x - 1, y + direction);
+        count++;
+    }
+    if(!at(x, y + direction) >= 0) {
+        moves[count] = getPos(x, y + direction);
+        count ++;
 
-
-    switch (direction) {
-        case -1:
-            break;
-        case 1:
-            break;
-        default:
-            break;
+        // Test if first move, if so : can advance 2 cases if no one 2 cases front.
+        if((direction == -1 && x == 6 || direction == 1 && x == 1) && at(x, y + 2 * direction) == -1) {
+            moves[count] = getPos(x, y + 2 * direction);
+            count++;
+        }
     }
 
+    moves[count] = -1;
+
+    int* out = moves;
+    return out;
 }
 /**
  *  Prints the Board in the terminal.
@@ -367,7 +424,11 @@ int* Board::lineMoves(unsigned int x, unsigned int y, int mode) {
     return out;
 
 }
-
+/**
+ * @param array1
+ * @param array2
+ * @return returns the concatenation of reduced array1 + array2.
+ */
 int* Board::concArrays(int *array1, int *array2) {
     array1 = reduceArray(array1);
     array2 = reduceArray(array2);
@@ -382,4 +443,18 @@ int* Board::concArrays(int *array1, int *array2) {
 
     int* out = array;
     return out;
+}
+/**
+ * @param moves
+ * Print the list of moves.
+ */
+void Board::printMoves(int *moves) {
+    std::cout << "Moves :" << std::endl;
+    int i(0);
+    while(moves[i] >= 0) {
+        std::cout << this->getX((unsigned int) moves[i])
+                  << ", "
+                  << this->getY((unsigned int) moves[i])
+                  << std::endl;
+    }
 }

@@ -18,18 +18,18 @@
 
 - **Mechanics**
     - [ ] Implement the different pieces movement range and abilities.
-        + [ ] Pawns black or white
-        + [ ] Rooks
-        + [ ] knights
-        + [ ] Bishops
-        + [ ] Queen
+        + [x] Pawns black or white
+        + [x] Rooks
+        + [x] knights
+        + [x] Bishops
+        + [x] Queen
         + [ ] King
         + [ ] // Which pieces are "takable" by another.
     - [ ] Implement specific rules:
         + [ ] Castle.
         + [ ] "En passant".
         + [ ] Promotion.
-        + [ ] 2 cases move for pawns.
+        + [x] 2 cases move for pawns.
         + [ ] King checked -> don't allow a move that lets the king be checked.
     - [ ] Implement End game:
         + [ ] Check all kings possible movements and see if checkmate.

@@ -57,6 +57,8 @@ private:
     int* lineMoves(unsigned int x, unsigned int y, int mode);
     // 0 : left, 1: down, 2 : right, 3 : up.
     int* concArrays(int* array1, int* array2);
+
+    void printMoves(int* moves);
 };
 
 
