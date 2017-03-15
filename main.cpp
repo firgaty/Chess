@@ -39,11 +39,15 @@ int main()
     pBoard.setAt(5, 4, 3);
     pBoard.reset(1);
     /* test pieces :
-     * (1,1) : 4 - Rook;
-     * (3,2) : 3 - Knight;
-     * (1,5) : 0 - King;
-     * (
-     * */
+     * (1,1) :  4 - Rook;
+     * (3,2) :  3 - Knight;
+     * (1,5) :  0 - King;
+     * (5,5) :  5 - Pawn;
+     * (6,4) : 11 - Black Pawn;
+     * (6,3) :  1 - Queen;
+     * (3,6) :  5 - Pawn;
+     */
+    pBoard.moves(3,2);
 
     if(!pOBoard.load("images/textures/pieces.png", sf::Vector2u(96, 96), pBoard.getBoard(),8, 8))
         return -1;

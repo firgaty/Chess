@@ -96,6 +96,12 @@
 		<Unit filename="/home/firgaty/Prog/Projects/Chess/DrawBoard.hpp">
 			<Option target="Chess"/>
 		</Unit>
+		<Unit filename="/home/firgaty/Prog/Projects/Chess/IntArray.cpp">
+			<Option target="Chess"/>
+		</Unit>
+		<Unit filename="/home/firgaty/Prog/Projects/Chess/IntArray.hpp">
+			<Option target="Chess"/>
+		</Unit>
 		<Unit filename="/home/firgaty/Prog/Projects/Chess/PiecesOnBoard.cpp">
 			<Option target="Chess"/>
 		</Unit>

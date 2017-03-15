@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/firgaty/Prog/Projects/Chess/Board.cpp" "/home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Board.cpp.o"
   "/home/firgaty/Prog/Projects/Chess/DrawBoard.cpp" "/home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/DrawBoard.cpp.o"
+  "/home/firgaty/Prog/Projects/Chess/IntArray.cpp" "/home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/IntArray.cpp.o"
   "/home/firgaty/Prog/Projects/Chess/PiecesOnBoard.cpp" "/home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/PiecesOnBoard.cpp.o"
   "/home/firgaty/Prog/Projects/Chess/main.cpp" "/home/firgaty/Prog/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/main.cpp.o"
   )

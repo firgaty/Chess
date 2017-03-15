@@ -177,6 +177,33 @@ DrawBoard.cpp.s:
 	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/DrawBoard.cpp.s
 .PHONY : DrawBoard.cpp.s
 
+IntArray.o: IntArray.cpp.o
+
+.PHONY : IntArray.o
+
+# target to build an object file
+IntArray.cpp.o:
+	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/IntArray.cpp.o
+.PHONY : IntArray.cpp.o
+
+IntArray.i: IntArray.cpp.i
+
+.PHONY : IntArray.i
+
+# target to preprocess a source file
+IntArray.cpp.i:
+	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/IntArray.cpp.i
+.PHONY : IntArray.cpp.i
+
+IntArray.s: IntArray.cpp.s
+
+.PHONY : IntArray.s
+
+# target to generate assembly for a file
+IntArray.cpp.s:
+	$(MAKE) -f CMakeFiles/Chess.dir/build.make CMakeFiles/Chess.dir/IntArray.cpp.s
+.PHONY : IntArray.cpp.s
+
 PiecesOnBoard.o: PiecesOnBoard.cpp.o
 
 .PHONY : PiecesOnBoard.o
@@ -246,6 +273,9 @@ help:
 	@echo "... DrawBoard.o"
 	@echo "... DrawBoard.i"
 	@echo "... DrawBoard.s"
+	@echo "... IntArray.o"
+	@echo "... IntArray.i"
+	@echo "... IntArray.s"
 	@echo "... PiecesOnBoard.o"
 	@echo "... PiecesOnBoard.i"
 	@echo "... PiecesOnBoard.s"

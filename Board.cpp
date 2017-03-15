@@ -25,34 +25,37 @@ Board::Board() {
  */
 void Board::reset(int mode) {
     switch (mode) {
-        case 0 :
+        case 0 : {
             int pieces[] =
                     {
-                            10,  9,  8,  7,  6,  8,  9, 10,
+                            10, 9, 8, 7, 6, 8, 9, 10,
                             11, 11, 11, 11, 11, 11, 11, 11,
                             -1, -1, -1, -1, -1, -1, -1, -1,
                             -1, -1, -1, -1, -1, -1, -1, -1,
                             -1, -1, -1, -1, -1, -1, -1, -1,
                             -1, -1, -1, -1, -1, -1, -1, -1,
-                            5,  5,  5,  5,  5,  5,  5,  5,
-                            4,  3,  2,  1,  0,  2,  3,  4,
+                            5, 5, 5, 5, 5, 5, 5, 5,
+                            4, 3, 2, 1, 0, 2, 3, 4,
                     };
             this->setBoard(pieces, 8, 8);
+        }
             break;
-        case 1 : // Test moves.
+        case 1 : {// Test moves.
             int tpieces[] =
                     {
                             -1, -1, -1, -1, -1, -1, -1, -1,
                             -1,  4, -1, -1, -1, -1, -1, -1,
                             -1, -1, -1,  3, -1, -1, -1, -1,
                             -1, -1, -1, -1, -1, -1,  1, -1,
-                            -1, -1, -1, -1, -1, -1,  6, -1,
+                            -1, -1, -1, -1, -1, -1, 11, -1,
                             -1,  0, -1, -1,  2,  5, -1, -1,
                             -1, -1, -1,  5, -1, -1, -1, -1,
                             -1, -1, -1, -1, -1, -1, -1, -1,
                     };
             this->setBoard(tpieces, 8, 8);
+        }
             break;
+        default:;
     }
 }
 
@@ -90,35 +93,54 @@ bool Board::isOpponent(unsigned int x, unsigned int y, int piece) {
  */
 int* Board::moves(unsigned int x, unsigned int y) {
     std::string str = (this->at(x, y) / 6 == 0) ? "White" : "black";
-    int *moves;
+    int* moves = NULL;
 
     switch(this->at(x, y) % 6) {
-        case 0 : std::cout << str << " King :";
+        case 0 : {
+            std::cout << str << " King :\n";
             moves = movesKing(x, y);
+        }
             break;
-        case 1 : std::cout << str << " Queen :";
+        case 1 : {
+            std::cout << str << " Queen :\n";
             moves = movesQueen(x, y);
+        }
             break;
-        case 2 : std::cout << str << " Bishop :";
+        case 2 : {
+            std::cout << str << " Bishop :\n";
             moves = movesBishop(x, y);
+        }
             break;
-        case 3 : std::cout << str << " Knight :";
+        case 3 : {
+            std::cout << str << " Knight :\n";
+
+
             moves = movesKnight(x, y);
+            std::cout << "case 3" << std::endl;
+            this->printMoves(movesKnight(x, y));
+        }
             break;
-        case 4 : std::cout << str << " Rook :";
+        case 4 : {
+            std::cout << str << " Rook :\n";
             moves = movesRook(x, y);
+        }
             break;
-        case 5 : std::cout << str << " Pawn :";
+        case 5 : {
+            std::cout << str << " Pawn :\n";
             moves = movesPawn(x, y);
             this->printMoves(moves);
+        }
             break;
-        default:
-            std::cout << "NONE :" << this->at(x, y) % 6;
+        default: {
+            std::cout << "NONE :\n" << this->at(x, y) % 6;
             int out[] = {-1};
             moves = out;
+        }
             break;
     }
-    std::cout << "\n" << std::endl;
+    std::cout << "\n TEST before reduceArray." << std::endl;
+    printMoves(moves);
+    std::cout << "\n TEST" << std::endl;
 
     // Now we reduce the array to the minimum;
     // We suppose every position to be different;
@@ -192,6 +214,7 @@ int* Board::movesBishop(unsigned int x, unsigned int y) {
  * @return the moves of the knight on (x,y)
  */
 int* Board::movesKnight(unsigned int x, unsigned int y) {
+    std::cout << "Knight moves:" << std::endl;
     int possibleMoves[] = {
              1,  2,
              1, -2,
@@ -212,10 +235,12 @@ int* Board::movesKnight(unsigned int x, unsigned int y) {
                || this->isOpponent(x + possibleMoves[i], y + possibleMoves[i + 2], this->at(x, y))) {
                 moves[count] = getPos(x + possibleMoves[i], y + possibleMoves[i + 2]);
                 count++;
+                std::cout << "1 iteration, pos : " << getPos(x + possibleMoves[i], y + possibleMoves[i + 2]) << std::endl;
             }
     }
     moves[count] = -1;
-    int* out = moves;
+    static int* out = moves;
+    printMoves(out);
     return out;
 
 }
@@ -448,13 +473,18 @@ int* Board::concArrays(int *array1, int *array2) {
  * @param moves
  * Print the list of moves.
  */
-void Board::printMoves(int *moves) {
+void Board::printMoves(int* moves) {
     std::cout << "Moves :" << std::endl;
     int i(0);
     while(moves[i] >= 0) {
         std::cout << this->getX((unsigned int) moves[i])
                   << ", "
                   << this->getY((unsigned int) moves[i])
+                  << " ; "
+                  << this->getX((unsigned int) *(moves + i))
+                  << ", "
+                  << this->getY((unsigned int) *(moves + i))
                   << std::endl;
+        i++;
     }
 }
