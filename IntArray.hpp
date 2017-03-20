@@ -12,16 +12,22 @@ public:
     IntArray(int* array);
 
     bool add(int val);
-    int at(int index);
+    int& at(int index);
+    int getAt(int index) const;
 
-    const int *getM_moves() const;
-    int getM_nbItems() const;
+
+    int *getMoves() const;
+    int length() const;
+
+    IntArray& operator+=(IntArray const& a);
 
 private:
     int m_moves[150];
-    int m_nbItems = 0;
+    int m_length = 0;
 
 };
+
+IntArray operator+(IntArray const& a, IntArray const& b);
 
 
 #endif //CHESS_INTARRAY_HPP
